@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F9C92181CB2B46E00928048 /* SGWeatherKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */; };
+		5F9C92191CB2B46E00928048 /* SGWeatherKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D28376A31CB1C7A000472290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28376A21CB1C7A000472290 /* AppDelegate.swift */; };
 		D28376A51CB1C7A000472290 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28376A41CB1C7A000472290 /* ViewController.swift */; };
 		D28376A81CB1C7A000472290 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28376A61CB1C7A000472290 /* Main.storyboard */; };
@@ -50,6 +52,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D2932D4C1CB1CCDB00E8C893 /* JSQCoreDataKit.framework in Embed Frameworks */,
+				5F9C92191CB2B46E00928048 /* SGWeatherKit.framework in Embed Frameworks */,
 				D2932D4F1CB1CCED00E8C893 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -58,6 +61,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SGWeatherKit.framework; path = Carthage/Build/iOS/SGWeatherKit.framework; sourceTree = "<group>"; };
 		D283769F1CB1C7A000472290 /* myWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28376A21CB1C7A000472290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28376A41CB1C7A000472290 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9C92181CB2B46E00928048 /* SGWeatherKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +183,7 @@
 		D2932D461CB1CBAA00E8C893 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */,
 				D2932D471CB1CBB600E8C893 /* Alamofire.framework */,
 				D2932D3E1CB1C96B00E8C893 /* JSQCoreDataKit.framework */,
 			);

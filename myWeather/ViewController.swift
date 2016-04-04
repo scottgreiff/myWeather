@@ -20,13 +20,12 @@ class ViewController: UIViewController {
         let model = CoreDataModel(name: modelName, bundle: modelBundle)
         let factory = CoreDataStackFactory(model: model)
         
-        factory.createStackInBackground {
-            (result: CoreDataStackResult) -> Void in
+        factory.createStackInBackground { (result: StackResult) in
             switch result {
-            case .Success(let s):
+            case .success(let s):
                 self.stack = s
-            case .Failure(let err):
-                assertionFailure("Error creating stack: \(err)")
+            case .failure(let e):
+                print("Error: \(e)")
             }
         }
     }
