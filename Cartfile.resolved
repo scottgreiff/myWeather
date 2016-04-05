@@ -1,3 +1,2 @@
-github "Alamofire/Alamofire" "3.3.0"
 github "jessesquires/JSQCoreDataKit" "3.0.0"
-github "scottgreiff/SGWeatherKit" "0.11"
+github "scottgreiff/SGWeatherKit" "0.32"

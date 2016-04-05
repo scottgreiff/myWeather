@@ -3,7 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="weathericons-regular-webfont.ttf">
+            <string>WeatherIcons-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -16,11 +23,110 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="COd-RB-yub">
+                                <rect key="frame" x="20" y="360" width="560" height="240"/>
+                            </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="N79-ot-FAa">
+                                <rect key="frame" x="20" y="20" width="560" height="34"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCc-Wi-Hh0">
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voP-T8-hEH">
+                                        <rect key="frame" x="0.0" y="20" width="560" height="14"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-jQ-EjI">
+                                <rect key="frame" x="20" y="199" width="10" height="35"/>
+                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-5c-ZKF">
+                                <rect key="frame" x="38" y="202" width="107" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-ST-Mao">
+                                <rect key="frame" x="20" y="250" width="89" height="95"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="80"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-LP-4EI">
+                                <rect key="frame" x="20" y="234" width="19" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-hb-csb">
+                                <rect key="frame" x="41" y="234" width="19" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-1f-kJD">
+                                <rect key="frame" x="65" y="234" width="35" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-Ym-hTj">
+                                <rect key="frame" x="102" y="234" width="19" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N79-ot-FAa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="02G-DQ-LQJ"/>
+                            <constraint firstItem="0Wp-5c-ZKF" firstAttribute="centerY" secondItem="JoE-jQ-EjI" secondAttribute="centerY" id="5PY-Od-2t7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="COd-RB-yub" secondAttribute="trailing" id="GDl-1m-JVN"/>
+                            <constraint firstItem="0dn-1f-kJD" firstAttribute="leading" secondItem="Kak-hb-csb" secondAttribute="trailing" constant="5" id="J9Q-CJ-gUS"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KwS-LG-sGa"/>
+                            <constraint firstItem="qar-Ym-hTj" firstAttribute="leading" secondItem="0dn-1f-kJD" secondAttribute="trailing" constant="2" id="MXa-68-f1b"/>
+                            <constraint firstItem="N79-ot-FAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="O8R-3r-kA3"/>
+                            <constraint firstItem="NSQ-LP-4EI" firstAttribute="leading" secondItem="JoE-jQ-EjI" secondAttribute="leading" id="PCQ-xN-R0B"/>
+                            <constraint firstItem="Kak-hb-csb" firstAttribute="baseline" secondItem="NSQ-LP-4EI" secondAttribute="baseline" id="QSl-Mg-Kdj"/>
+                            <constraint firstItem="N79-ot-FAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qtz-p8-hV6"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="top" secondItem="wbx-ST-Mao" secondAttribute="bottom" constant="15" id="RNQ-6d-7H8"/>
+                            <constraint firstItem="NSQ-LP-4EI" firstAttribute="top" secondItem="JoE-jQ-EjI" secondAttribute="bottom" id="Xlh-cl-LwA"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="Z0j-JF-jJV"/>
+                            <constraint firstItem="wbx-ST-Mao" firstAttribute="leading" secondItem="NSQ-LP-4EI" secondAttribute="leading" id="aqo-0g-593"/>
+                            <constraint firstItem="wbx-ST-Mao" firstAttribute="leading" secondItem="COd-RB-yub" secondAttribute="leading" id="fLr-rW-n3g"/>
+                            <constraint firstItem="0Wp-5c-ZKF" firstAttribute="leading" secondItem="JoE-jQ-EjI" secondAttribute="trailing" constant="8" id="jXb-2l-h9f"/>
+                            <constraint firstItem="0dn-1f-kJD" firstAttribute="baseline" secondItem="Kak-hb-csb" secondAttribute="baseline" id="n0S-Ce-dx0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="COd-RB-yub" secondAttribute="bottom" id="n0v-gF-wvU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="N79-ot-FAa" secondAttribute="trailing" id="n4D-ec-EZe"/>
+                            <constraint firstItem="qar-Ym-hTj" firstAttribute="baseline" secondItem="0dn-1f-kJD" secondAttribute="baseline" id="s34-ED-VEZ"/>
+                            <constraint firstItem="Kak-hb-csb" firstAttribute="leading" secondItem="NSQ-LP-4EI" secondAttribute="trailing" constant="2" id="sMT-Tf-Jtn"/>
+                            <constraint firstItem="wbx-ST-Mao" firstAttribute="top" secondItem="NSQ-LP-4EI" secondAttribute="bottom" constant="-5" id="wEF-fl-uWn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLabel" destination="vCc-Wi-Hh0" id="SLx-Du-o2u"/>
+                        <outlet property="conditionsIconLabel" destination="JoE-jQ-EjI" id="25U-VE-a15"/>
+                        <outlet property="conditionsNameLabel" destination="0Wp-5c-ZKF" id="G7C-VM-pDU"/>
+                        <outlet property="currentTempLabel" destination="wbx-ST-Mao" id="yb3-NS-u8O"/>
+                        <outlet property="forecastDateLabel" destination="voP-T8-hEH" id="Flt-dR-voV"/>
+                        <outlet property="highTempLabel" destination="Kak-hb-csb" id="8p1-FI-126"/>
+                        <outlet property="lowTempLabel" destination="qar-Ym-hTj" id="1V5-Gb-e9x"/>
+                        <outlet property="mapView" destination="COd-RB-yub" id="eia-kJ-GHt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="501" y="647"/>
         </scene>
     </scenes>
 </document>

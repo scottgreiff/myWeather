@@ -1,2 +1,2 @@
 github "jessesquires/JSQCoreDataKit"
-github "scottgreiff/SGWeatherKit"
+github "scottgreiff/SGWeatherKit" ~> 0.32
