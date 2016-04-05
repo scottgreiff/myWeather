@@ -11,6 +11,7 @@
 		5F9C92191CB2B46E00928048 /* SGWeatherKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FE79EBF1CB4004D00503DA1 /* WAIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE79EBE1CB4004D00503DA1 /* WAIcon.swift */; };
 		5FE79EC11CB4009800503DA1 /* weathericons-regular-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FE79EC01CB4009800503DA1 /* weathericons-regular-webfont.ttf */; };
+		5FE9325B1CB45DEE007C6B93 /* WeatherIconUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9325A1CB45DEE007C6B93 /* WeatherIconUtility.swift */; };
 		D28376A31CB1C7A000472290 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28376A21CB1C7A000472290 /* AppDelegate.swift */; };
 		D28376A51CB1C7A000472290 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28376A41CB1C7A000472290 /* ViewController.swift */; };
 		D28376A81CB1C7A000472290 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28376A61CB1C7A000472290 /* Main.storyboard */; };
@@ -64,6 +65,7 @@
 		5F9C92171CB2B46E00928048 /* SGWeatherKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SGWeatherKit.framework; path = Carthage/Build/iOS/SGWeatherKit.framework; sourceTree = "<group>"; };
 		5FE79EBE1CB4004D00503DA1 /* WAIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WAIcon.swift; sourceTree = "<group>"; };
 		5FE79EC01CB4009800503DA1 /* weathericons-regular-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "weathericons-regular-webfont.ttf"; sourceTree = "<group>"; };
+		5FE9325A1CB45DEE007C6B93 /* WeatherIconUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherIconUtility.swift; sourceTree = "<group>"; };
 		D283769F1CB1C7A000472290 /* myWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28376A21CB1C7A000472290 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D28376A41CB1C7A000472290 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				D28376A91CB1C7A000472290 /* Assets.xcassets */,
 				D28376AB1CB1C7A000472290 /* LaunchScreen.storyboard */,
 				D28376AE1CB1C7A000472290 /* Info.plist */,
+				5FE9325A1CB45DEE007C6B93 /* WeatherIconUtility.swift */,
 			);
 			path = myWeather;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				D28376A31CB1C7A000472290 /* AppDelegate.swift in Sources */,
 				5FE79EBF1CB4004D00503DA1 /* WAIcon.swift in Sources */,
 				D2932D571CB1D24300E8C893 /* FAIcon.swift in Sources */,
+				5FE9325B1CB45DEE007C6B93 /* WeatherIconUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

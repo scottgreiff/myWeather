@@ -145,13 +145,22 @@ extension ViewController: MKMapViewDelegate {
                 
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateStyle = .ShortStyle
+                dateFormatter.timeStyle = .ShortStyle
+                
+                var nowIsDay = true
+                
+                if let sunriseTime = weatherListItem.sunrise_time {
+                    if let sunsetTime = weatherListItem.sunset_time {
+                        nowIsDay = weatherListItem.forecastDate.isGreaterThanDate(sunriseTime) && weatherListItem.forecastDate.isLessThanDate(sunsetTime)
+                    }
+                }
                 
                 self.currentTempLabel.text = numberFormatter.stringFromNumber(weatherListItem.environment.temp)!+"°"
                 self.highTempLabel.text = numberFormatter.stringFromNumber(weatherListItem.environment.temp_max)!+"°"
                 self.lowTempLabel.text = numberFormatter.stringFromNumber(weatherListItem.environment.temp_min)!+"°"
                 self.forecastDateLabel.text = "Forecast date: \(dateFormatter.stringFromDate(weatherListItem.forecastDate))"
                 self.conditionsNameLabel.text = weatherListItem.weather.description
-                self.conditionsIconLabel.WIIcon = WIType.WIDayCloudyWindy
+                self.conditionsIconLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(weatherListItem.weather.id, isDay: nowIsDay)
             }
         } else {
             self.cityNameLabel.text = ""
@@ -179,7 +188,7 @@ extension ViewController: CLLocationManagerDelegate {
         case .AuthorizedWhenInUse:
             createLocationManager(true)
         case .Denied:
-            displayAlertWithTitle("Not Determined",
+            displayAlertWithTitle("Denied",
                                   message: "Location services are not allowed for this app")
         case .NotDetermined:
             createLocationManager(false)
