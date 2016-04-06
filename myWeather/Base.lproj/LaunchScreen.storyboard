@@ -17,25 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt" translatesAutoresizingMaskIntoConstraints="NO" id="BXZ-3q-z6t">
+                                <rect key="frame" x="271" y="231" width="59" height="78"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Fux-q6-svh"/>
+                                    <constraint firstAttribute="width" constant="59" id="fhi-Yv-9Sl"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="myWeather for iOS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-W0-UOh">
-                                <rect key="frame" x="176" y="314" width="248" height="39"/>
+                                <rect key="frame" x="176" y="328" width="248" height="39"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bolt" translatesAutoresizingMaskIntoConstraints="NO" id="YDv-28-syc">
-                                <rect key="frame" x="271" y="231" width="59" height="78"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="78" id="cBs-a6-4eo"/>
-                                    <constraint firstAttribute="width" constant="59" id="lhT-kz-eBe"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vmK-W0-UOh" firstAttribute="top" secondItem="YDv-28-syc" secondAttribute="bottom" constant="5" id="7cl-5g-1fk"/>
-                            <constraint firstItem="YDv-28-syc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7uU-rP-2gw"/>
-                            <constraint firstItem="YDv-28-syc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="C9h-dd-vEe"/>
+                            <constraint firstItem="BXZ-3q-z6t" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="DTL-U4-6Oe"/>
+                            <constraint firstItem="BXZ-3q-z6t" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EKF-um-f1i"/>
+                            <constraint firstItem="vmK-W0-UOh" firstAttribute="top" secondItem="BXZ-3q-z6t" secondAttribute="bottom" constant="19" id="fTx-eF-4kM"/>
                             <constraint firstItem="vmK-W0-UOh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="tcd-qi-2nH"/>
                         </constraints>
                     </view>

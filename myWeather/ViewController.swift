@@ -71,38 +71,6 @@ class ViewController: UIViewController {
         self.conditionsNameLabel.text = ""
     }
     
-    func requestLocationAccess() {
-        if CLLocationManager.locationServicesEnabled() {
-            switch CLLocationManager.authorizationStatus() {
-            case .Authorized:
-                createLocationManager(true)
-            case .AuthorizedWhenInUse:
-                createLocationManager(true)
-            case .Denied:
-                displayAlertWithTitle("Denied",
-                                      message: "Location services are not allowed for this app")
-            case .NotDetermined:
-                createLocationManager(false)
-                locManager.requestWhenInUseAuthorization()
-            case .Restricted:
-                displayAlertWithTitle("Restricted",
-                                      message: "Location services are not allowed for this app")
-            }
-        }
-    }
-    
-    func createLocationManager(startImmediately: Bool) {
-        locManager.delegate = self
-        locManager.desiredAccuracy = kCLLocationAccuracyKilometer
-        locManager.distanceFilter = kCLDistanceFilterNone
-        
-        CLLocationManager.locationServicesEnabled()
-        
-        if startImmediately{
-//            locManager.startUpdatingLocation()
-        }
-    }
-    
     func displayAlertWithTitle(title: String, message: String){
         let controller = UIAlertController(title: title,
                                            message: message,
@@ -127,6 +95,7 @@ extension ViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation) {
         let region: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800)
         mapView.setRegion(mapView.regionThatFits(region), animated: true)
+        mapView.showsUserLocation = false
     }
     
     func updateWeatherInfo(result: WeatherKitAgent.Result) {
@@ -182,21 +151,7 @@ extension ViewController: CLLocationManagerDelegate {
                          didChangeAuthorizationStatus status: CLAuthorizationStatus){
         print("The authorization status of location services is changed to: ")
         
-        switch CLLocationManager.authorizationStatus() {
-        case .Authorized:
-            createLocationManager(true)
-        case .AuthorizedWhenInUse:
-            createLocationManager(true)
-        case .Denied:
-            displayAlertWithTitle("Denied",
-                                  message: "Location services are not allowed for this app")
-        case .NotDetermined:
-            createLocationManager(false)
-            locManager.requestWhenInUseAuthorization()
-        case .Restricted:
-            displayAlertWithTitle("Restricted",
-                                  message: "Location services are not allowed for this app")
-        }
+        self.requestLocationAccess()
     }
     
     func locationManager(manager: CLLocationManager,
@@ -214,5 +169,31 @@ extension ViewController: CLLocationManagerDelegate {
             let alertController = UIAlertController(title: "", message: "", preferredStyle: .Alert)
             presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func requestLocationAccess() {
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+            case .Authorized:
+                createLocationManager()
+            case .AuthorizedWhenInUse:
+                createLocationManager()
+            case .Denied:
+                displayAlertWithTitle("Denied",
+                                      message: "Location services are not allowed for this app")
+            case .NotDetermined:
+                createLocationManager()
+                locManager.requestWhenInUseAuthorization()
+            case .Restricted:
+                displayAlertWithTitle("Restricted",
+                                      message: "Location services are not allowed for this app")
+            }
+        }
+    }
+    
+    func createLocationManager() {
+        locManager.delegate = self
+        locManager.desiredAccuracy = kCLLocationAccuracyKilometer
+        locManager.distanceFilter = kCLDistanceFilterNone
     }
 }
