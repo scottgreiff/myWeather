@@ -1,1 +1,1 @@
-github "scottgreiff/SGWeatherKit"
+github "scottgreiff/SGWeatherKit" ~> 0.4

@@ -9,6 +9,9 @@
     <customFonts key="customFonts">
         <mutableArray key="weathericons-regular-webfont.ttf">
             <string>WeatherIcons-Regular</string>
+            <string>WeatherIcons-Regular</string>
+            <string>WeatherIcons-Regular</string>
+            <string>WeatherIcons-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -41,72 +44,107 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-jQ-EjI">
-                                <rect key="frame" x="20" y="71" width="10" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JoE-jQ-EjI">
+                                <rect key="frame" x="20" y="74" width="10" height="35"/>
                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="25" y="63" width="9" height="28"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="Conditions" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-5c-ZKF">
-                                <rect key="frame" x="38" y="74" width="537" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Conditions" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-5c-ZKF">
+                                <rect key="frame" x="38" y="74" width="537" height="35"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="42" y="62" width="173" height="29"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="Hi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-LP-4EI">
-                                <rect key="frame" x="20" y="111" width="19" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Hi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSQ-LP-4EI">
+                                <rect key="frame" x="20" y="109" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="25" y="91" width="19" height="21"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-hb-csb">
-                                <rect key="frame" x="41" y="111" width="19" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-hb-csb">
+                                <rect key="frame" x="41" y="109" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="46" y="91" width="19" height="21"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Low:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-1f-kJD">
-                                <rect key="frame" x="65" y="111" width="35" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-1f-kJD">
+                                <rect key="frame" x="65" y="109" width="35" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="70" y="91" width="35" height="21"/>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-Ym-hTj">
-                                <rect key="frame" x="102" y="111" width="19" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-Ym-hTj">
+                                <rect key="frame" x="102" y="109" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="107" y="91" width="19" height="21"/>
-                                </variation>
                             </label>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="COd-RB-yub">
-                                <rect key="frame" x="20" y="237" width="560" height="363"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="COd-RB-yub">
+                                <rect key="frame" x="20" y="235" width="560" height="365"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" misplaced="YES" text="38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-ST-Mao">
-                                <rect key="frame" x="20" y="127" width="89" height="95"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="38" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbx-ST-Mao">
+                                <rect key="frame" x="20" y="125" width="89" height="95"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="80"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact" misplaced="YES">
-                                    <rect key="frame" x="25" y="107" width="89" height="95"/>
-                                </variation>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-XD-il6">
+                                <rect key="frame" x="531" y="145" width="49" height="75"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="imy-tk-t5O">
+                                        <rect key="frame" x="0.0" y="0.0" width="49" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-qT-sAw">
+                                                <rect key="frame" x="0.0" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmB-1S-fp9">
+                                                <rect key="frame" x="42" y="0.0" width="7" height="25"/>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-Ly-u0i">
+                                        <rect key="frame" x="0.0" y="25" width="49" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJv-e5-9gO">
+                                                <rect key="frame" x="0.0" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53N-y4-dU5">
+                                                <rect key="frame" x="42" y="0.0" width="7" height="25"/>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bn1-Lq-AOW">
+                                        <rect key="frame" x="0.0" y="50" width="49" height="25"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH7-VJ-1J1">
+                                                <rect key="frame" x="0.0" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiy-Pa-y0U">
+                                                <rect key="frame" x="42" y="0.0" width="7" height="25"/>
+                                                <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.62352941176470589" green="0.85490196078431369" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -124,9 +162,15 @@
                             <constraint firstItem="0Wp-5c-ZKF" firstAttribute="top" secondItem="COd-RB-yub" secondAttribute="top" id="NPx-3R-MZb"/>
                             <constraint firstItem="N79-ot-FAa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="O8R-3r-kA3"/>
                             <constraint firstItem="NSQ-LP-4EI" firstAttribute="leading" secondItem="JoE-jQ-EjI" secondAttribute="leading" id="PCQ-xN-R0B"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="bottom" secondItem="vhc-XD-il6" secondAttribute="bottom" constant="10" id="PLb-wX-pHZ">
+                                <variation key="heightClass=compact" constant="10"/>
+                            </constraint>
                             <constraint firstItem="Kak-hb-csb" firstAttribute="baseline" secondItem="NSQ-LP-4EI" secondAttribute="baseline" id="QSl-Mg-Kdj"/>
                             <constraint firstItem="N79-ot-FAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Qtz-p8-hV6"/>
                             <constraint firstItem="COd-RB-yub" firstAttribute="top" secondItem="wbx-ST-Mao" secondAttribute="bottom" constant="15" id="RNQ-6d-7H8"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="leading" secondItem="vhc-XD-il6" secondAttribute="trailing" constant="8" id="ScO-UH-HL1"/>
+                            <constraint firstItem="vhc-XD-il6" firstAttribute="trailing" secondItem="COd-RB-yub" secondAttribute="trailing" id="Svf-hI-s4L"/>
+                            <constraint firstItem="COd-RB-yub" firstAttribute="top" secondItem="vhc-XD-il6" secondAttribute="bottom" constant="15" id="TLh-9q-ASn"/>
                             <constraint firstItem="COd-RB-yub" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.7" priority="750" id="Z0j-JF-jJV"/>
                             <constraint firstItem="wbx-ST-Mao" firstAttribute="leading" secondItem="NSQ-LP-4EI" secondAttribute="leading" id="aqo-0g-593"/>
                             <constraint firstItem="wbx-ST-Mao" firstAttribute="leading" secondItem="COd-RB-yub" secondAttribute="leading" id="fLr-rW-n3g"/>
@@ -148,6 +192,8 @@
                                 <exclude reference="3dj-vk-9qr"/>
                                 <exclude reference="Ihg-SX-iFh"/>
                                 <exclude reference="MhS-gv-mIg"/>
+                                <exclude reference="ScO-UH-HL1"/>
+                                <exclude reference="PLb-wX-pHZ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -164,7 +210,11 @@
                                 <exclude reference="KwS-LG-sGa"/>
                                 <include reference="MhS-gv-mIg"/>
                                 <exclude reference="RNQ-6d-7H8"/>
+                                <include reference="ScO-UH-HL1"/>
+                                <exclude reference="TLh-9q-ASn"/>
                                 <exclude reference="Z0j-JF-jJV"/>
+                                <include reference="PLb-wX-pHZ"/>
+                                <exclude reference="Svf-hI-s4L"/>
                             </mask>
                         </variation>
                     </view>
@@ -174,6 +224,12 @@
                         <outlet property="conditionsIconLabel" destination="JoE-jQ-EjI" id="25U-VE-a15"/>
                         <outlet property="conditionsNameLabel" destination="0Wp-5c-ZKF" id="G7C-VM-pDU"/>
                         <outlet property="currentTempLabel" destination="wbx-ST-Mao" id="yb3-NS-u8O"/>
+                        <outlet property="dayOneConditionLabel" destination="gmB-1S-fp9" id="gbg-Wc-VLe"/>
+                        <outlet property="dayOneTitleLabel" destination="TBg-qT-sAw" id="4u5-GE-1HA"/>
+                        <outlet property="dayThreeConditionLabel" destination="Fiy-Pa-y0U" id="ReK-LH-hBp"/>
+                        <outlet property="dayThreeTitleLabel" destination="rH7-VJ-1J1" id="BNn-x6-P91"/>
+                        <outlet property="dayTwoConditionLabel" destination="53N-y4-dU5" id="5wP-IA-qxT"/>
+                        <outlet property="dayTwoTitleLabel" destination="NJv-e5-9gO" id="rHC-h7-pea"/>
                         <outlet property="forecastDateLabel" destination="voP-T8-hEH" id="Flt-dR-voV"/>
                         <outlet property="highTempLabel" destination="Kak-hb-csb" id="8p1-FI-126"/>
                         <outlet property="highTempTitleLabel" destination="NSQ-LP-4EI" id="cEw-Y9-HG6"/>

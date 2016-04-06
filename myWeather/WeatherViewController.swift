@@ -24,6 +24,14 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionWeatherLabel: UILabel!
     @IBOutlet weak var highTempTitleLabel: UILabel!
     @IBOutlet weak var lowTempTitleLabel: UILabel!
+    
+    @IBOutlet weak var dayOneTitleLabel: UILabel!
+    @IBOutlet weak var dayOneConditionLabel: UILabel!
+    @IBOutlet weak var dayTwoTitleLabel: UILabel!
+    @IBOutlet weak var dayTwoConditionLabel: UILabel!
+    @IBOutlet weak var dayThreeTitleLabel: UILabel!
+    @IBOutlet weak var dayThreeConditionLabel: UILabel!
+    
 
     var locManager: CLLocationManager = CLLocationManager()
     let weatherAgent: WeatherKitAgent = WeatherKitAgent(apiKey: "195ca018929c41a89f286e0910a5da77")
@@ -67,6 +75,12 @@ class WeatherViewController: UIViewController {
         self.conditionWeatherLabel.text = ""
         self.highTempTitleLabel.text = ""
         self.lowTempTitleLabel.text = ""
+        self.dayOneTitleLabel.text = ""
+        self.dayOneConditionLabel.text = ""
+        self.dayTwoTitleLabel.text = ""
+        self.dayTwoConditionLabel.text = ""
+        self.dayThreeTitleLabel.text = ""
+        self.dayThreeConditionLabel.text = ""
     }
 
     func displayAlertWithTitle(title: String, message: String) {
@@ -165,9 +179,38 @@ extension WeatherViewController: MKMapViewDelegate {
                 let wiType = WeatherIconUtility.WITypeLookupByWeatherId(weatherListItem.weather.id, isDay: nowIsDay)
                 self.conditionsIconLabel.WIIcon = wiType
                 self.addMapAnnotations(city, conditions: weatherListItem.weather.main, type: wiType, isDay: nowIsDay)
+                
+                self.fetchExtendedForecast(city.lat, lon: city.lon)
             }
         } else {
             self.clearLabelContents()
+        }
+    }
+    
+    func fetchExtendedForecast(lat: Double, lon: Double) {
+        self.weatherAgent.dailyForecast(CLLocationCoordinate2D(latitude: lat, longitude: lon)) {
+            result in
+            
+            if let city = result.data() {
+                if city.weatherList?.count < 7 {
+                    return
+                }
+                
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateStyle = .ShortStyle
+                dateFormatter.doesRelativeDateFormatting = true
+                
+                let dayOneItem: WeatherListItem = city.weatherList![1]
+                let dayTwoItem: WeatherListItem = city.weatherList![2]
+                let dayThreeItem: WeatherListItem = city.weatherList![3]
+
+                self.dayOneTitleLabel.text = "\(dateFormatter.stringFromDate(dayOneItem.forecastDate))"
+                self.dayOneConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayOneItem.weather.id, isDay: true)
+                self.dayTwoTitleLabel.text = "\(dateFormatter.stringFromDate(dayTwoItem.forecastDate))"
+                self.dayTwoConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayTwoItem.weather.id, isDay: true)
+                self.dayThreeTitleLabel.text = "\(dateFormatter.stringFromDate(dayThreeItem.forecastDate))"
+                self.dayThreeConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayThreeItem.weather.id, isDay: true)
+            }
         }
     }
 
