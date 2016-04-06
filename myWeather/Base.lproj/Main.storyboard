@@ -64,24 +64,36 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="25" y="91" width="19" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="45" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kak-hb-csb">
                                 <rect key="frame" x="41" y="111" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="46" y="91" width="19" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Low:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-1f-kJD">
                                 <rect key="frame" x="65" y="111" width="35" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="70" y="91" width="35" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="26" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qar-Ym-hTj">
                                 <rect key="frame" x="102" y="111" width="19" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="107" y="91" width="19" height="21"/>
+                                </variation>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="COd-RB-yub">
                                 <rect key="frame" x="20" y="237" width="560" height="363"/>
@@ -91,9 +103,12 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="80"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="25" y="107" width="89" height="95"/>
+                                </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.84240447538260121" green="0.92484621270408096" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.62352941176470589" green="0.85490196078431369" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="N79-ot-FAa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="02G-DQ-LQJ"/>
                             <constraint firstItem="COd-RB-yub" firstAttribute="top" secondItem="voP-T8-hEH" secondAttribute="bottom" constant="8" id="3dj-vk-9qr"/>
@@ -122,6 +137,7 @@
                             <constraint firstItem="qar-Ym-hTj" firstAttribute="baseline" secondItem="0dn-1f-kJD" secondAttribute="baseline" id="s34-ED-VEZ"/>
                             <constraint firstItem="Kak-hb-csb" firstAttribute="leading" secondItem="NSQ-LP-4EI" secondAttribute="trailing" constant="2" id="sMT-Tf-Jtn"/>
                             <constraint firstItem="wbx-ST-Mao" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="tDX-Fg-Tu8"/>
+                            <constraint firstItem="NSQ-LP-4EI" firstAttribute="top" secondItem="JoE-jQ-EjI" secondAttribute="bottom" id="ttM-Gb-v9R"/>
                             <constraint firstItem="0Wp-5c-ZKF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="voP-T8-hEH" secondAttribute="bottom" constant="20" id="vx6-Sc-1BF"/>
                             <constraint firstItem="wbx-ST-Mao" firstAttribute="top" secondItem="NSQ-LP-4EI" secondAttribute="bottom" constant="-5" id="wEF-fl-uWn"/>
                         </constraints>
@@ -140,6 +156,7 @@
                                 <include reference="NPx-3R-MZb"/>
                                 <exclude reference="vx6-Sc-1BF"/>
                                 <include reference="BhP-yq-D47"/>
+                                <include reference="ttM-Gb-v9R"/>
                                 <exclude reference="fLr-rW-n3g"/>
                                 <include reference="tDX-Fg-Tu8"/>
                                 <include reference="3dj-vk-9qr"/>
