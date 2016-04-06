@@ -27,10 +27,13 @@ class WeatherViewController: UIViewController {
     
     @IBOutlet weak var dayOneTitleLabel: UILabel!
     @IBOutlet weak var dayOneConditionLabel: UILabel!
+    @IBOutlet weak var dayOneTempLabel: UILabel!
     @IBOutlet weak var dayTwoTitleLabel: UILabel!
     @IBOutlet weak var dayTwoConditionLabel: UILabel!
+    @IBOutlet weak var dayTwoTempLabel: UILabel!
     @IBOutlet weak var dayThreeTitleLabel: UILabel!
     @IBOutlet weak var dayThreeConditionLabel: UILabel!
+    @IBOutlet weak var dayThreeTempLabel: UILabel!
     
 
     var locManager: CLLocationManager = CLLocationManager()
@@ -77,10 +80,13 @@ class WeatherViewController: UIViewController {
         self.lowTempTitleLabel.text = ""
         self.dayOneTitleLabel.text = ""
         self.dayOneConditionLabel.text = ""
+        self.dayOneTempLabel.text = ""
         self.dayTwoTitleLabel.text = ""
         self.dayTwoConditionLabel.text = ""
+        self.dayTwoTempLabel.text = ""
         self.dayThreeTitleLabel.text = ""
         self.dayThreeConditionLabel.text = ""
+        self.dayThreeTempLabel.text = ""
     }
 
     func displayAlertWithTitle(title: String, message: String) {
@@ -200,16 +206,24 @@ extension WeatherViewController: MKMapViewDelegate {
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.doesRelativeDateFormatting = true
                 
+                let numberFormatter = NSNumberFormatter()
+                numberFormatter.numberStyle = .NoStyle
+
                 let dayOneItem: WeatherListItem = city.weatherList![1]
                 let dayTwoItem: WeatherListItem = city.weatherList![2]
                 let dayThreeItem: WeatherListItem = city.weatherList![3]
 
                 self.dayOneTitleLabel.text = "\(dateFormatter.stringFromDate(dayOneItem.forecastDate))"
                 self.dayOneConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayOneItem.weather.id, isDay: true)
+                self.dayOneTempLabel.text = "Hi: " + numberFormatter.stringFromNumber(dayOneItem.environment.temp_max)! + "°"
+
                 self.dayTwoTitleLabel.text = "\(dateFormatter.stringFromDate(dayTwoItem.forecastDate))"
                 self.dayTwoConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayTwoItem.weather.id, isDay: true)
+                self.dayTwoTempLabel.text = "Hi: " + numberFormatter.stringFromNumber(dayTwoItem.environment!.temp_max)! + "°"
+                
                 self.dayThreeTitleLabel.text = "\(dateFormatter.stringFromDate(dayThreeItem.forecastDate))"
                 self.dayThreeConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayThreeItem.weather.id, isDay: true)
+                self.dayThreeTempLabel.text = "Hi: " + numberFormatter.stringFromNumber(dayThreeItem.environment!.temp_max)! + "°"
             }
         }
     }

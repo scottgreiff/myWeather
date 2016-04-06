@@ -89,11 +89,11 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-XD-il6">
-                                <rect key="frame" x="531" y="145" width="49" height="75"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vhc-XD-il6">
+                                <rect key="frame" x="485" y="145" width="91" height="75"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="imy-tk-t5O">
-                                        <rect key="frame" x="0.0" y="0.0" width="49" height="25"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="91" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBg-qT-sAw">
                                                 <rect key="frame" x="0.0" y="2" width="39" height="21"/>
@@ -107,10 +107,16 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pH1-hx-nMs">
+                                                <rect key="frame" x="52" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bvY-Ly-u0i">
-                                        <rect key="frame" x="0.0" y="25" width="49" height="25"/>
+                                        <rect key="frame" x="0.0" y="25" width="91" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJv-e5-9gO">
                                                 <rect key="frame" x="0.0" y="2" width="39" height="21"/>
@@ -124,10 +130,16 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ng-o9-5p7">
+                                                <rect key="frame" x="52" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="bn1-Lq-AOW">
-                                        <rect key="frame" x="0.0" y="50" width="49" height="25"/>
+                                        <rect key="frame" x="0.0" y="50" width="91" height="25"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH7-VJ-1J1">
                                                 <rect key="frame" x="0.0" y="2" width="39" height="21"/>
@@ -138,6 +150,12 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fiy-Pa-y0U">
                                                 <rect key="frame" x="42" y="0.0" width="7" height="25"/>
                                                 <fontDescription key="fontDescription" name="WeatherIcons-Regular" family="Weather Icons" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snq-DU-gCV">
+                                                <rect key="frame" x="52" y="2" width="39" height="21"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -225,10 +243,13 @@
                         <outlet property="conditionsNameLabel" destination="0Wp-5c-ZKF" id="G7C-VM-pDU"/>
                         <outlet property="currentTempLabel" destination="wbx-ST-Mao" id="yb3-NS-u8O"/>
                         <outlet property="dayOneConditionLabel" destination="gmB-1S-fp9" id="gbg-Wc-VLe"/>
+                        <outlet property="dayOneTempLabel" destination="pH1-hx-nMs" id="QkJ-qn-VGI"/>
                         <outlet property="dayOneTitleLabel" destination="TBg-qT-sAw" id="4u5-GE-1HA"/>
                         <outlet property="dayThreeConditionLabel" destination="Fiy-Pa-y0U" id="ReK-LH-hBp"/>
+                        <outlet property="dayThreeTempLabel" destination="snq-DU-gCV" id="un2-ne-j7q"/>
                         <outlet property="dayThreeTitleLabel" destination="rH7-VJ-1J1" id="BNn-x6-P91"/>
                         <outlet property="dayTwoConditionLabel" destination="53N-y4-dU5" id="5wP-IA-qxT"/>
+                        <outlet property="dayTwoTempLabel" destination="3ng-o9-5p7" id="Esv-yw-Gh3"/>
                         <outlet property="dayTwoTitleLabel" destination="NJv-e5-9gO" id="rHC-h7-pea"/>
                         <outlet property="forecastDateLabel" destination="voP-T8-hEH" id="Flt-dR-voV"/>
                         <outlet property="highTempLabel" destination="Kak-hb-csb" id="8p1-FI-126"/>
