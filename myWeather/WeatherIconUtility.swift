@@ -11,7 +11,7 @@ import Foundation
 public class WeatherIconUtility {
     class func WITypeLookupByWeatherId(weatherId: Int, isDay: Bool) -> WIType {
         var result = WIType.WINa
-        
+
         switch weatherId {
         case 200, 201, 202, 210, 211, 212, 221:
             isDay == true ? (result = WIType.WIDayThunderstorm) : (result = WIType.WINightThunderstorm)
@@ -26,7 +26,7 @@ public class WeatherIconUtility {
             isDay == true ? (result = WIType.WIDaySnow) : (result = WIType.WINightSnow)
         case 615, 616, 620, 611, 612:
             isDay == true ? (result = WIType.WIDayRainMix) : (result = WIType.WINightRainMix)
-        case 701,721, 741:
+        case 701, 721, 741:
             isDay == true ? (result = WIType.WIDayFog) : (result = WIType.WINightFog)
         case 800, 951:
             isDay == true ? (result = WIType.WIDaySunny) : (result = WIType.WINightClear)
@@ -40,7 +40,7 @@ public class WeatherIconUtility {
         default:
             result = WIType.WINa
         }
-        
+
         return result
     }
 }
@@ -56,24 +56,24 @@ extension NSDate {
 
         return isGreater
     }
-    
+
     func isLessThanDate(dateToCompare: NSDate) -> Bool {
         var isLess = false
 
         if self.compare(dateToCompare) == NSComparisonResult.OrderedAscending {
             isLess = true
         }
-        
+
         return isLess
     }
-    
+
     func equalToDate(dateToCompare: NSDate) -> Bool {
         var isEqualTo = false
-        
+
         if self.compare(dateToCompare) == NSComparisonResult.OrderedSame {
             isEqualTo = true
         }
-        
+
         return isEqualTo
     }
 }
