@@ -24,7 +24,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var conditionWeatherLabel: UILabel!
     @IBOutlet weak var highTempTitleLabel: UILabel!
     @IBOutlet weak var lowTempTitleLabel: UILabel!
-    
+
     @IBOutlet weak var dayOneTitleLabel: UILabel!
     @IBOutlet weak var dayOneConditionLabel: UILabel!
     @IBOutlet weak var dayOneTempLabel: UILabel!
@@ -34,11 +34,11 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var dayThreeTitleLabel: UILabel!
     @IBOutlet weak var dayThreeConditionLabel: UILabel!
     @IBOutlet weak var dayThreeTempLabel: UILabel!
-    
 
     var locManager: CLLocationManager = CLLocationManager()
     let weatherAgent: WeatherKitAgent = WeatherKitAgent(apiKey: "195ca018929c41a89f286e0910a5da77")
     var haveNewUserLocation: Bool = false
+    let kNumberOfCities: Int = 10
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,8 +104,8 @@ class WeatherViewController: UIViewController {
 
 extension WeatherViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        let location = mapView.centerCoordinate
         if (haveNewUserLocation) {
+            let location = mapView.centerCoordinate
             self.weatherAgent.currentWeather(location) {
                 result in
                 mapView.removeAnnotations(mapView.annotations)
@@ -139,10 +139,10 @@ extension WeatherViewController: MKMapViewDelegate {
         let point = recognizer.locationInView(self.mapView);
         if let map = self.mapView {
             let coord = map.convertPoint(point, toCoordinateFromView: map)
+            map.removeAnnotations(map.annotations)
 
             self.weatherAgent.currentWeather(coord) {
                 result in
-                map.removeAnnotations(map.annotations)
                 self.updateWeatherInfo(result)
             }
         }
@@ -155,7 +155,7 @@ extension WeatherViewController: MKMapViewDelegate {
             return
         }
 
-        if let city = result.data() {
+        if let city: City = result.data() {
             if let weatherListItem: WeatherListItem = city.weatherList!.first {
                 self.cityNameLabel.text = city.name
 
@@ -165,6 +165,7 @@ extension WeatherViewController: MKMapViewDelegate {
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.timeStyle = .ShortStyle
+                dateFormatter.doesRelativeDateFormatting = true
 
                 var nowIsDay = true
 
@@ -184,28 +185,46 @@ extension WeatherViewController: MKMapViewDelegate {
                 self.conditionsNameLabel.text = weatherListItem.weather.description
                 let wiType = WeatherIconUtility.WITypeLookupByWeatherId(weatherListItem.weather.id, isDay: nowIsDay)
                 self.conditionsIconLabel.WIIcon = wiType
-                self.addMapAnnotations(city, conditions: weatherListItem.weather.main, type: wiType, isDay: nowIsDay)
-                
+                self.addMapAnnotations(city, conditions: weatherListItem.weather.main, type: wiType, isDay: nowIsDay, setRegion: true)
+
                 self.fetchExtendedForecast(city.lat, lon: city.lon)
+                self.fetchNeighboringConditions(city.lat, lon: city.lon, baseCityName: city.name, isDay: nowIsDay)
             }
         } else {
             self.clearLabelContents()
         }
     }
-    
+
+    func fetchNeighboringConditions(lat: Double, lon: Double, baseCityName: String, isDay: Bool) {
+        self.weatherAgent.citiesInCycle(CLLocationCoordinate2D(latitude: lat, longitude: lon), numberOfCities: kNumberOfCities) {
+            result in
+            if let cities: [City] = result.data() {
+                for city in cities {
+                    if city.name != baseCityName {
+                        if let weatherListItem: WeatherListItem = city.weatherList!.first {
+                            let wiType = WeatherIconUtility.WITypeLookupByWeatherId(weatherListItem.weather.id, isDay: isDay)
+                            self.addMapAnnotations(city, conditions: weatherListItem.weather.main, type: wiType, isDay: isDay, setRegion: false)
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
     func fetchExtendedForecast(lat: Double, lon: Double) {
         self.weatherAgent.dailyForecast(CLLocationCoordinate2D(latitude: lat, longitude: lon)) {
             result in
-            
-            if let city = result.data() {
+
+            if let city: City = result.data() {
                 if city.weatherList?.count < 7 {
                     return
                 }
-                
+
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateStyle = .ShortStyle
                 dateFormatter.doesRelativeDateFormatting = true
-                
+
                 let numberFormatter = NSNumberFormatter()
                 numberFormatter.numberStyle = .NoStyle
 
@@ -220,7 +239,7 @@ extension WeatherViewController: MKMapViewDelegate {
                 self.dayTwoTitleLabel.text = "\(dateFormatter.stringFromDate(dayTwoItem.forecastDate))"
                 self.dayTwoConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayTwoItem.weather.id, isDay: true)
                 self.dayTwoTempLabel.text = "Hi: " + numberFormatter.stringFromNumber(dayTwoItem.environment!.temp_max)! + "°"
-                
+
                 self.dayThreeTitleLabel.text = "\(dateFormatter.stringFromDate(dayThreeItem.forecastDate))"
                 self.dayThreeConditionLabel.WIIcon = WeatherIconUtility.WITypeLookupByWeatherId(dayThreeItem.weather.id, isDay: true)
                 self.dayThreeTempLabel.text = "Hi: " + numberFormatter.stringFromNumber(dayThreeItem.environment!.temp_max)! + "°"
@@ -228,26 +247,28 @@ extension WeatherViewController: MKMapViewDelegate {
         }
     }
 
-    func addMapAnnotations(city: City, conditions: String, type: WIType, isDay: Bool) {
+    func addMapAnnotations(city: City, conditions: String, type: WIType, isDay: Bool, setRegion: Bool) {
         if let _ = city.lat {
             let coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(city.lat), CLLocationDegrees(city.lon))
             let annotation = WeatherAnnotation(coordinate: coordinate, title: city.name, subtitle: conditions, type: type)
             mapView.addAnnotation(annotation)
 
-            // move map to center on annotation, but maintain current map zoom scale
-            let span = mapView.region.span
-            let center = mapView.region.center
+            if (setRegion) {
+                // move map to center on annotation, but maintain current map zoom scale
+                let span = mapView.region.span
+                let center = mapView.region.center
 
-            let loc1 = CLLocation(latitude: center.latitude - span.latitudeDelta * 0.5, longitude: center.longitude)
-            let loc2 = CLLocation(latitude: center.latitude + span.latitudeDelta * 0.5, longitude: center.longitude)
-            let loc3 = CLLocation(latitude: center.latitude, longitude: center.longitude - span.longitudeDelta * 0.5)
-            let loc4 = CLLocation(latitude: center.latitude, longitude: center.longitude + span.longitudeDelta * 0.5)
+                let loc1 = CLLocation(latitude: center.latitude - span.latitudeDelta * 0.5, longitude: center.longitude)
+                let loc2 = CLLocation(latitude: center.latitude + span.latitudeDelta * 0.5, longitude: center.longitude)
+                let loc3 = CLLocation(latitude: center.latitude, longitude: center.longitude - span.longitudeDelta * 0.5)
+                let loc4 = CLLocation(latitude: center.latitude, longitude: center.longitude + span.longitudeDelta * 0.5)
 
-            let metersInLatitude = loc1.distanceFromLocation(loc2)
-            let metersInLongitude = loc3.distanceFromLocation(loc4)
+                let metersInLatitude = loc1.distanceFromLocation(loc2)
+                let metersInLongitude = loc3.distanceFromLocation(loc4)
 
-            let region: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, metersInLatitude, metersInLongitude)
-            mapView.setRegion(region, animated: true)
+                let region: MKCoordinateRegion = MKCoordinateRegionMakeWithDistance(coordinate, metersInLatitude, metersInLongitude)
+                mapView.setRegion(region, animated: true)
+            }
         }
     }
 }
